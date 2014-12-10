@@ -1,0 +1,33 @@
+trackbar.pl
+hilightwin.pl
+nickcolor.pl
+splitlong.pl
+usercount.pl
+auto_whois.pl
+cron.pl
+nicklist.pl
+
+# in irssi 
+# check server list
+/server list 
+
+# check channel list
+/channel list
+
+# check network list 
+/network list 
+
+# add autoconnect. Ex: irc.freenode.net
+/server add -auto -network freenode irc.freenode.net
+
+# server remove 
+/server remove irc.efnet.org
+
+# auto-assign nick to network, Ex: freenode
+/network add -modes 4 -nick MyNick -user MyUser -realname MyRealname freenode
+/network add -modes 4 -nick MyNick
+
+# auto join channel 
+/channel add -auto #irssi freenode
+
+
