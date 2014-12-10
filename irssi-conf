@@ -10,6 +10,12 @@ nicklist.pl
 il.pl
 trigger.pl
 
+# hilight window 
+/window new split
+/window name hilight
+/window size 4
+/hilight <MyNick>
+
 # set timestamp format
 /set timestamp_format %d.%H:%M:%S
 
@@ -49,9 +55,10 @@ cp il.pl autorun/
 # server remove 
 /server remove irc.efnet.org
 
-# auto-assign nick to network, Ex: freenode
+# auto-assign and sign-in nick to network, Ex: freenode
 /network add -modes 4 -nick MyNick -user MyUser -realname MyRealname freenode
 /network add -modes 4 -nick MyNick
+/network add -autosendcmd "/msg nickserv IDENTIFY <MyPasswd>; wait 2000; /window goto nickserv; /wc" freenode
 
 # auto join channel 
 /channel add -auto #irssi freenode
