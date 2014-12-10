@@ -43,6 +43,9 @@ cp il.pl autorun/
 # check server list
 /server list 
 
+# check script list 
+/script list 
+
 # check channel list
 /channel list
 
