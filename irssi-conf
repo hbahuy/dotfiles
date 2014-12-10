@@ -4,13 +4,34 @@ nickcolor.pl
 splitlong.pl
 usercount.pl
 auto_whois.pl
+adv_windowlist.pl
 cron.pl
 nicklist.pl
+il.pl
+trigger.pl
 
-cron script to auto say !keep in specfic channel
+# set timestamp format
+/set timestamp_format %d.%H:%M:%S
+
+# download scripts and add to autorun folder  
+wget -P ~/.irssi/scripts http://scripts.irssi.org/scripts/il.pl
+cd ~/.irssi/scripts
+cp il.pl autorun/
+
+# in Irssi, type
+/run autorun/il.pl
+/statusbar window add usercount
+
+# cron script to auto say !keep in specfic channel
 /jobadd 05 45 * * * /script exec Irssi::window_find_item("#channel-name")->command("say !keep abc")
 /jobbsave
 /jobsload
+
+# adv_windowlist setting 
+/set awl_viewer off
+/format awl_display_key = $Q%K|$N%n $H$C$S 
+/format awl_display_key_active = $Q%K|$N%n $H%U$C%n$S 
+/format awl_display_nokey = [$N]$H$C$S 
 
 # in irssi 
 # check server list
