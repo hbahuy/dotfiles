@@ -63,7 +63,8 @@ cp il.pl autorun/
 /network add -modes 4 -nick MyNick
 /network add -autosendcmd "/msg nickserv IDENTIFY <MyPasswd>; wait 2000; /window goto nickserv; /wc" freenode
 
-# auto join channel 
+# auto join channel & auto join channel + message bot
 /channel add -auto #irssi freenode
+/CHANNEL ADD -auto -botcmd "/^msg bot LOGIN <char_name> <password>" #idlerpg freenode
 
 
