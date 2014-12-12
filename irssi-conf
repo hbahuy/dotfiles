@@ -67,4 +67,8 @@ cp il.pl autorun/
 /channel add -auto #irssi freenode
 /CHANNEL ADD -auto -botcmd "/^msg bot LOGIN <char_name> <password>" #idlerpg freenode
 
+# ignore joins, parts, quits
+/ignore * joins
+/ignore * parts
+/ignore * quits
 
