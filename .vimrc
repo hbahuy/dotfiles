@@ -1,45 +1,95 @@
- " Basic settings
-  set nocompatible                    " Eliminate backwards-compatability
-  set number                          " Enable line numbers
-  set ruler                           " Turn on the ruler
-  syntax on                           " Syntax highlighting
-  set t_Co=256                        " Enable 256 colors in terminal
-  set cursorline                      " Highlight current line
-  syntax enable                       " enable syntax processing
-  set showcmd                         " show command in bottom bar
-  set wildmenu                        " visual autocomplete for command menu
-  set lazyredraw                      " redraw only when we ned to
-  set showmatch                       " highlight matching [{()}]
-  set tabstop=4                       " number of visual spaces per TAB
- 
-  filetype indent on                  " load filetype-specfic indent files
- 
-  " Pathogen
-  execute pathogen#infect()
- 
-  " Plugins
-  filetype off                        " Req'd for vundle
-  set rtp+=~/.vim/bundle/Vundle.vim   " Vundle prelude
-  call vundle#begin()                 " ^
-  
-  " let Vundle manage Vundle, required
-  Plugin 'gmarik/Vundle.vim'
-  Plugin 'bling/vim-airline'
-  Plugin 'kien/ctrlp.vim'
-  Plugin 'scrooloose/syntastic'
-  Plugin 'altercation/vim-colors-solarized'
- 
-  " All of your Plugins must be added before the following line
-  call vundle#end()                   " required
-  filetype plugin indent on           " required
- 
-  " colorscheme solarized
-  syntax enable
-  set background=dark
-  let g:solarized_termcolors=256
-  colorscheme solarized
-  
-  " Enable vim-airline
-  set laststatus=2
-  set ttimeoutlen=50
+" General "{{{
+set nocompatible               " be iMproved
 
+scriptencoding utf-8           " utf-8 all the way
+set encoding=utf-8
+
+set hidden                     " The current buffer can be put to the background without writing to disk
+
+set hlsearch                   " highlight search
+set ignorecase                 " be case insensitive when searching
+set smartcase                  " be case sensitive when input has a capital letter
+set incsearch                  " show matches while typing
+
+let mapleader = ','
+
+" "}}}
+
+" Formatting "{{{
+
+
+
+" "}}}
+
+" Visual "{{{
+syntax on                      " enable syntax
+
+set nonumber                  " line numbers Off
+set showmatch                 " Show matching brackets
+
+set t_Co=256                  " Enable 256 colors in terminal
+
+set cursorline                " Highlight current line
+
+set ruler                     " Turn on the ruler
+
+set novisualbell              " No blinking
+set noerrorbells              " No noise.
+set vb t_vb=                  " disable any beeps or flashes on error
+
+"set number                          " Enable line numbers
+  
+set showcmd                         " show command in bottom bar
+set wildmenu                        " visual autocomplete for command menu
+set lazyredraw                      " redraw only when we ned to
+set showmatch                       " highlight matching [{()}]
+set tabstop=4                       " number of visual spaces per TAB
+
+set laststatus=2              " always show status line
+
+set statusline=%<%f\          " custom statusline
+set stl+=[%{&ff}]             " show fileformat
+set stl+=%y%m%r%=
+set stl+=%-14.(%l,%c%V%)\ %P
+
+" "}}}
+
+" Scripts and Plugins " {{{
+filetype off
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'gmarik/vundle' " let Vundle manage Vundle
+
+"Plugin 'flazz/vim-colorschemes'
+
+" Colorscheme
+Plugin 'altercation/vim-colors-solarized'
+set background=dark
+let g:solarized_termcolors=256
+colorscheme solarized
+
+Plugin 'kien/ctrlp.vim'
+
+Plugin 'scrooloose/syntastic'
+
+Plugin 'tpope/vim-surround'
+
+Plugin 'Lokaltog/vim-easymotion'
+
+Plugin 'bling/vim-airline'
+
+Plugin 'jiangmiao/auto-pairs'
+
+Plugin 'sjl/gundo.vim'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+" " }}}
+
+
+ 
