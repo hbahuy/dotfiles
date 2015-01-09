@@ -72,3 +72,10 @@ cp il.pl autorun/
 /ignore * parts
 /ignore * quits
 
+# scripts: queryresume, len, history_search
+
+# logging
+
+/set log_timestamp    %Y.%m.%d %H:%M
+
+/SET autolog_path ~/irclogs/%Y/$tag/$0.%m-%d.log
