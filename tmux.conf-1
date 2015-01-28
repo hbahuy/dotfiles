@@ -1,15 +1,14 @@
-Start windows and panes at 1, not 0,
-
+# Start windows and panes at 1, not 0,
 set -g base-index 1
 set -g pane-base-index 1
-Replace C-b with \,
 
+# Replace C-b with \,
 unbind C-b 
 set -g prefix '\'
 bind-key '\' send-prefix
 set-window-option -g xterm-keys on
-Setup key bindings,
 
+#Setup key bindings,
 bind t source-file ~/.tmux-over-ssh.conf
 bind g source-file ~/.tmux-annex-sync.conf
 bind k confirm kill-window
@@ -19,21 +18,21 @@ bind tab last-window
 
 # window movement / renumbering like in screen's :number
 bind-key m command-prompt -p "move window to:"  "swap-window -t '%%'"
-Enable UTF-8,
 
+# Enable UTF-8,
 setw -g utf8 on
 set -g status-utf8 on
 setw -g window-status-current-format "|#I:#W|"
-Makes using the scroll wheel automatically switch to copy mode and scroll back the tmux scrollback buffer.
 
+# Makes using the scroll wheel automatically switch to copy mode and scroll back the tmux scrollback buffer.
 setw -g mode-mouse on
-Status bar,
 
+#Status bar,
 set-option -g  status-interval 1
 set-option -g status-right-length 120
 set -g status-right '#(~/.tmux-monitor-scripts/cpu.sh)#(~/.tmux-monitor-scripts/cpu_avg_temp.sh)#(~/.tmux-monitor-scripts/disk.sh)#(~/.tmux-monitor-scripts/netspeed eth0)#(~/.tmux-monitor-scripts/battery.sh)#(date +"%a %b %_d %H:%M") | #(hostname)'
-Create a new window, swtich to home directory and type tmux-ssh,
 
+# Create a new window, swtich to home directory and type tmux-ssh,
 neww -n tmux-ssh
 send-keys -t tmux-ssh "cd ~/" C-m
 send-keys -t tmux-ssh "tmux-ssh "
