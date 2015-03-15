@@ -30,7 +30,7 @@ cp il.pl autorun/
 
 # cron script to auto say !keep in specfic channel
 /jobadd 05 45 * * * /script exec Irssi::window_find_item("#channel-name")->command("say !keep abc")
-/jobbsave
+/jobssave
 /jobsload
 
 # adv_windowlist setting 
