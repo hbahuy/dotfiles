@@ -35,9 +35,9 @@ cp il.pl autorun/
 
 # adv_windowlist setting 
 /set awl_viewer off
-/format awl_display_key = $Q%K|$N%n $H$C$S 
-/format awl_display_key_active = $Q%K|$N%n $H%U$C%n$S 
-/format awl_display_nokey = [$N]$H$C$S 
+/format awl_display_key $Q%K|$N%n $H$C$S 
+/format awl_display_key_active $Q%K|$N%n $H%U$C%n$S 
+/format awl_display_nokey [$N]$H$C$S 
 
 # in irssi 
 # check server list
